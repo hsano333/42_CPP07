@@ -1,4 +1,4 @@
-NAME	:= Start_with_a_few functions
+NAME	:= Start_with_a_few
 LIB	:= ./lib/
 OBJDIR	:= ./obj
 SRCDIR	:= ./srcs/
