@@ -8,7 +8,7 @@ using std::endl;
 template <typename T>
 void add_one(T& value)
 {
-    cout << value + 1 << endl;
+    value += 2;
 }
 
 template <typename T>
@@ -16,7 +16,7 @@ void print( T const & x ) { std::cout << x << std::endl; return; }
 
 int main(void)
 {
-    const int size = 10;
+    int size = 10;
     char test[size];
 
     for (int i = 0; i < size; i++)
