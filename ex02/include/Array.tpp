@@ -24,7 +24,6 @@ Array<T>::~Array()
 template <typename T>
 Array<T>::Array(const Array& ary)
 {
-    delete this->array_;
     this->array_ = new T[ary.size()];
     for (unsigned int i = 0; i < ary.size() ; i++)
     {
