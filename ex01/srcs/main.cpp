@@ -8,12 +8,14 @@ using std::endl;
 template <typename T>
 void add_one(T& value)
 {
-    value += 1;
+    cout << value + 1 << endl;
 }
+
+template <typename T>
+void print( T const & x ) { std::cout << x << std::endl; return; }
 
 int main(void)
 {
-
     const int size = 10;
     char test[size];
 
@@ -29,7 +31,5 @@ int main(void)
     {
         cout << "after test[" << i << "] = " << test[i] << endl;
     }
-
-
     return (0);
 }

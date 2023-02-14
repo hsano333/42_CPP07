@@ -9,7 +9,7 @@ using std::cout;
 using std::endl;
 
 template <typename T>
-void iter(T *array, size_t len, void(*func)(T& value))
+void iter(T *array, size_t len, void(*func)(T const &value))
 {
     for (size_t i = 0; i < len; i++)
     {
