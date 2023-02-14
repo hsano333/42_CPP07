@@ -11,17 +11,14 @@ void add_one(T& value)
     value += 2;
 }
 
-template <typename T>
-void print( T const & x ) { std::cout << x << std::endl; return; }
-
 int main(void)
 {
     int size = 10;
-    char test[size];
+    int test[size];
 
     for (int i = 0; i < size; i++)
     {
-        test[i] = i + 32;
+        test[i] = i + 42;
         cout << "before test[" << i << "] = " << test[i] << endl;
     }
 
