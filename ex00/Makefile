@@ -19,15 +19,17 @@ all:
 	@make $(NAME)	
 
 $(NAME)	:	$(OBJECTS)
-		$(CXX)  $(CXXFLAGS) $(OBJECTS) -o $@
+		$(CXX) $(OBJECTS) -o $@
 
-$(OBJDIR)/%.o: $(SRCDIR)/%.cpp
+$(OBJDIR)/%.o: $(SRCDIR)/%.cpp | $(OBJDIR)
 	@mkdir -p $(OBJDIR) / $(*D)
 	$(CXX) $(CXXFLAGS) $(IFLAGS) -c $< -MMD -MP -MF $(OBJDIR)/$*.d  -o $@
 
+$(OBJDIR) :
+	@mkdir $(OBJDIR)
+
 clean	:
-			$(RM) $(OBJECTS)
-			$(RM) $(DEPS)
+			$(RM) -r $(OBJDIR)
 
 fclean	:	clean
 			$(RM) $(NAME)

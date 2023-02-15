@@ -10,6 +10,7 @@ int main(void)
     int sizeB = 10;
     Array<int> tmpA(sizeA);
     Array<int> tmpB(sizeB);
+    Array<Array<int> > tmpC(sizeB);
 
     for (int i = 0; i < sizeA; i++)
     {
