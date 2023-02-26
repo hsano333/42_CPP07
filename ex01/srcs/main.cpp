@@ -6,11 +6,16 @@ using std::cout;
 using std::endl;
 
 template <typename T>
-void add_one(T& value)
+void add_two(T& value)
 {
     value += 2;
 }
 
+template <typename T>
+void print(const T& value)
+{
+    cout << value << endl;
+}
 int main(void)
 {
     int size = 10;
@@ -21,12 +26,9 @@ int main(void)
         test[i] = i + 42;
         cout << "before test[" << i << "] = " << test[i] << endl;
     }
-
-    iter(test, size, add_one);
-    cout << endl;
-    for (int i = 0; i < size; i++)
-    {
-        cout << "after test[" << i << "] = " << test[i] << endl;
-    }
+    cout << "test:iterator add_two()" << endl;
+    iter(test, size, add_two);
+    cout << "test:iterator print()" << endl;
+    iter(test, size, print);
     return (0);
 }
