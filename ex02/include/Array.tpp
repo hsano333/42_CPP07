@@ -56,6 +56,7 @@ Array<T>& Array<T>::operator=(const Array<T> & ary)
                 tmp[i] = ary.array_[i];
             }
             this->size_ = ary.size();
+            delete [] (this->array_);
             this->array_ = tmp;
         }catch (std::exception){
             std::cerr << "Error:Array() Copy Asignment" << std::endl;

@@ -11,7 +11,6 @@ int main(void)
     {
         Array<int> tmpA(sizeA);
         Array<int> tmpB(sizeB);
-        Array<Array<int> > tmpC(sizeB);
 
         cout << "tmpA.size()=" << tmpA.size() << endl;
         for (int i = 0; i < sizeA; i++)
@@ -74,6 +73,7 @@ int main(void)
         Array<int> tmpA(sizeA);
         Array<int> tmpB(sizeB);
         Array<Array<int> > tmpC(sizeB);
+        Array<Array<int> > tmpD(sizeB);
         cout << endl;
         cout << "tmpA.size()=" << tmpA.size() << endl ;
         for (int i = 0; i < sizeA; i++)
@@ -85,6 +85,8 @@ int main(void)
         {
             cout << "tmpB[" << i << "]:" << tmpB[i] << endl;
         }
+        tmpD = tmpC;
+        tmpC = tmpD;
 
     }
     //system("leaks Array");
