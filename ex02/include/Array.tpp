@@ -4,14 +4,14 @@
 template <typename T>
 Array<T>::Array(unsigned int n)
 {
-    this->array_ = new T[n];
+    this->array_ = new T[n] ();
     this->size_ = n;
 }
 
 template <typename T>
 Array<T>::Array()
 {
-    this->array_ = new T[0];
+    this->array_ = new T[0] ();
     this->size_ = 0;
 }
 
@@ -24,7 +24,7 @@ Array<T>::~Array()
 template <typename T>
 Array<T>::Array(const Array& ary)
 {
-    this->array_ = new T[ary.size()];
+    this->array_ = new T[ary.size()] ();
     for (unsigned int i = 0; i < ary.size() ; i++)
     {
         this->array_[i] = ary.array_[i];
@@ -36,7 +36,7 @@ template <typename T>
 Array<T>& Array<T>::operator=(const Array & ary)
 {
     delete [] this->array_;
-    this->array_ = new T[ary.size()];
+    this->array_ = new T[ary.size()] ();
     for (unsigned int i = 0; i < ary.size() ; i++)
     {
         this->array_[i] = ary.array_[i];
@@ -66,6 +66,5 @@ unsigned int Array<T>::size(void) const
 {
     return (this->size_);
 }
-
 
 #endif

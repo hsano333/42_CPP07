@@ -14,13 +14,13 @@ int main(void)
 
     for (int i = 0; i < sizeA; i++)
     {
-        tmpA[i] = i;
+        //tmpA[i] = i;
         cout << "tmpA[" << i << "]:" << tmpA[i] << endl;
     }
     cout << "tmpA.size()=" << tmpA.size() << endl << endl;;
     for (int i = 0; i < sizeB; i++)
     {
-        tmpB[i] = i * 2;
+        //tmpB[i] = i * 2;
         cout << "tmpB[" << i << "]:" << tmpB[i] << endl;
     }
     cout << "tmpB.size()=" << tmpB.size() << endl << endl;;
