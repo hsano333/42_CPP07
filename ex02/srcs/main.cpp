@@ -70,10 +70,10 @@ int main(void)
         }
 
     }
+    {
         Array<int> tmpA(sizeA);
         Array<int> tmpB(sizeB);
         Array<Array<int> > tmpC(sizeB);
-    {
         cout << endl;
         cout << "tmpA.size()=" << tmpA.size() << endl ;
         for (int i = 0; i < sizeA; i++)
@@ -87,6 +87,5 @@ int main(void)
         }
 
     }
-
-    system("leaks Array");
+    //system("leaks Array");
 }
