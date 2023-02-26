@@ -5,10 +5,10 @@
 
 int main( void ) {
 
-    int a = 2;
-    int b = 3;
-    //int a = INT_MAX;
-    //int b = INT_MAX + 1u;
+    //int a = 2;
+    //int b = 3;
+    int a = INT_MAX;
+    int b = INT_MAX + 1u;
     //float a = 2.3f;
     //float b = -3.5f;
     //double a = 10.234;
