@@ -13,33 +13,33 @@ int main(void)
         Array<int> tmpB(sizeB);
         Array<Array<int> > tmpC(sizeB);
 
+        cout << "tmpA.size()=" << tmpA.size() << endl;
         for (int i = 0; i < sizeA; i++)
         {
             tmpA[i] = i;
             cout << "tmpA[" << i << "]:" << tmpA[i] << endl;
         }
-        cout << "tmpA.size()=" << tmpA.size() << endl << endl;;
+        cout << endl << "tmpB.size()=" << tmpB.size() << endl;
         for (int i = 0; i < sizeB; i++)
         {
             tmpB[i] = i * 2;
             cout << "tmpB[" << i << "]:" << tmpB[i] << endl;
         }
-        cout << "tmpB.size()=" << tmpB.size() << endl << endl;;
         cout << endl << "test:tmpA = tmpB" << endl;
         tmpA = tmpB;
         tmpA[0] = 100;
         tmpA[5] = 100;
+        cout << "tmpA.size()=" << tmpA.size() << endl;
         for (int i = 0; i < (int)tmpA.size(); i++)
         {
             cout << "tmpA[" << i << "]:" << tmpA[i] << endl;
         }
-        cout << "tmpA.size()=" << tmpA.size() << endl << endl;;
+        cout << endl << "tmpB.size()=" << tmpB.size() << endl;
         for (int i = 0; i < (int)tmpB.size(); i++)
         {
             tmpB[i] = i * 2;
             cout << "tmpB[" << i << "]:" << tmpB[i] << endl;
         }
-        cout << "tmpB.size()=" << tmpB.size() << endl << endl;;
 
         try
         {
@@ -52,16 +52,35 @@ int main(void)
             cout << "catch exception" << endl;
             cout << e.what() << endl;
         }
+
+
+        cout << endl << "tmpD(tmpA)" << endl;
+        Array<int > tmpD(tmpA);
+        tmpD[3] = 100;
+        tmpD[4] = 100;
+        cout << endl << "tmpA.size()=" << tmpA.size() << endl;
+        for (int i = 0; i < (int)tmpA.size(); i++)
+        {
+            cout << "tmpA[" << i << "]:" << tmpA[i] << endl;
+        }
+        cout << endl << "tmpD.size()=" << tmpA.size() << endl ;
+        for (int i = 0; i < (int)tmpD.size(); i++)
+        {
+            cout << "tmpD[" << i << "]:" << tmpD[i] << endl;
+        }
+
     }
         Array<int> tmpA(sizeA);
         Array<int> tmpB(sizeB);
         Array<Array<int> > tmpC(sizeB);
     {
+        cout << endl;
+        cout << "tmpA.size()=" << tmpA.size() << endl ;
         for (int i = 0; i < sizeA; i++)
         {
             cout << "tmpA[" << i << "]:" << tmpA[i] << endl;
         }
-        cout << "tmpA.size()=" << tmpA.size() << endl << endl;;
+        cout << "tmpB.size()=" << tmpA.size() << endl ;
         for (int i = 0; i < sizeB; i++)
         {
             cout << "tmpB[" << i << "]:" << tmpB[i] << endl;
@@ -69,5 +88,5 @@ int main(void)
 
     }
 
-    //system("leaks Array");
+    system("leaks Array");
 }

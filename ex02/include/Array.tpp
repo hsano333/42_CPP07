@@ -1,6 +1,10 @@
 #ifndef ARRAY_T
 #define ARRAY_T
 
+#include <iostream>
+#include <ostream>
+#include "Array.hpp"
+
 template <typename T>
 Array<T>::Array(unsigned int n)
 {
@@ -22,26 +26,41 @@ Array<T>::~Array()
 }
 
 template <typename T>
-Array<T>::Array(const Array& ary)
+Array<T>::Array(const Array<T>& ary)
 {
-    this->array_ = new T[ary.size()]() ;
-    for (unsigned int i = 0; i < ary.size() ; i++)
-    {
-        this->array_[i] = ary.array_[i];
+    T* tmp;
+
+    try {
+        tmp = new T[ary.size()] ();
+        for (unsigned int i = 0; i < ary.size() ; i++)
+        {
+            tmp[i] = ary.array_[i];
+        }
+        this->size_ = ary.size();
+        this->array_ = tmp;
+    }catch (std::exception){
+        std::cerr << "Error:Array() Copy Constructor" << std::endl;
     }
-    this->size_ = ary.size();
 }
 
 template <typename T>
-Array<T>& Array<T>::operator=(const Array & ary)
+Array<T>& Array<T>::operator=(const Array<T> & ary)
 {
-    delete [] this->array_;
-    this->array_ = new T[ary.size()]() ;
-    for (unsigned int i = 0; i < ary.size() ; i++)
+    if (this != &ary)
     {
-        this->array_[i] = ary.array_[i];
+        T* tmp;
+        try {
+            tmp = new T[ary.size()];
+            for (unsigned int i = 0; i < ary.size() ; i++)
+            {
+                tmp[i] = ary.array_[i];
+            }
+            this->size_ = ary.size();
+            this->array_ = tmp;
+        }catch (std::exception){
+            std::cerr << "Error:Array() Copy Asignment" << std::endl;
+        }
     }
-    this->size_ = ary.size();
     return (*this);
 }
 
